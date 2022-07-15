@@ -8,14 +8,20 @@ class Match:
 
 
     def startMatch(self, mapa, players, sus):
-        print(f"El juego empezara en el mapa {mapa} con {players} jugadores y {sus} impostores")
+
+        if players + sus < 10:
+            print(f"The game will start on the map {mapa} with {players} players and {sus} impostors")
+        else:
+            print(f"Select the correc amount of crewmates and impostors to start")
 
 
-    def finishMatch(self, players, sus):
-        if sus == 0:
+    def finishMatch(self, players, sus, tasksCompleted):
+        if sus == 0 or tasksCompleted == int(players * 6):
             print(f"Crewmates win")
         
-        if sus == players:
+        elif sus == players:
             print(f"Impostors win")
+        
+
 
         
