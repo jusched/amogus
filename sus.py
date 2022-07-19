@@ -13,3 +13,5 @@ class Sus(Amogus):
 
     def travelVent(self):
         pass
+
+

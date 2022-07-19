@@ -1,9 +1,12 @@
+from amogus import Match
+
+import random
+
 class Amogus():
 
-    def __init__(self, name, tasksToDo, colour):
+    def __init__(self, name, colour, map_option):
         self.name = name
-        self.tasksToDo = tasksToDo
-        self.colour = colour
+        self.colour = colour    
 
     def doTask(self):
         pass
@@ -16,3 +19,5 @@ class Amogus():
 
     def reportBody(self):
         pass
+
+    #Random in order to calculate if another crewmate has seen the killing
