@@ -34,5 +34,5 @@ class Tasks:
                 tasksToDo.pop(counter)
                 counter -= 1
         #Assigns tasks from task_list until 4 are choosen. 
-        #If a task is going to be repeated, it repeats the process in order to avoid it
-    
+        #If a task is going to be repeated, it repeats the process
+        # in order to avoid the same task twice on the same player. 

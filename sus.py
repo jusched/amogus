@@ -1,3 +1,4 @@
+from match import Match
 from amogus import Amogus
 
 class Sus(Amogus):
@@ -14,4 +15,6 @@ class Sus(Amogus):
     def travelVent(self):
         pass
 
-
+    def reportBody(self):
+        
+        self.meeting()

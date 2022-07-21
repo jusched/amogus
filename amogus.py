@@ -4,7 +4,7 @@ import random
 
 class Amogus():
 
-    def __init__(self, name, colour, map_option):
+    def __init__(self, name, colour):
         self.name = name
         self.colour = colour    
 

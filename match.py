@@ -1,3 +1,4 @@
+import time
 from tasks import Tasks
 
 class Match:
@@ -28,6 +29,12 @@ class Match:
         else:
             return
     
+    def meeting(self, players, sus, timer):
+        
+        votes = 0
+
+        
+        
 
 
         
