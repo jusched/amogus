@@ -1,5 +1,5 @@
-from amogus import Match
-
+from match import Match
+import time
 import random
 
 class Amogus():
@@ -12,7 +12,8 @@ class Amogus():
         pass
 
     def callMeeting(self):
-        pass
+        self.meeting(players, sus, timer)
+
 
     def vote(self):
         pass

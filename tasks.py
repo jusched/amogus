@@ -3,6 +3,8 @@ import random
 class Tasks:
 
     def __init__(self):
+        #Has the maps and assigned task for each map in order to make the 
+        #Assignation at the start of the game
         self.map_option = {
             "Skeld":["Card swipe", "Reactor", "Navigation",
             "Cables", "02 filter", "Clean Vent", "Electric"

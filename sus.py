@@ -1,3 +1,4 @@
+import random
 from match import Match
 from amogus import Amogus
 
@@ -10,10 +11,16 @@ class Sus(Amogus):
         pass
 
     def sabotage(self):
-        pass
+        visibility += 30
+        self.travelVent
+        self.killTripulant
 
     def travelVent(self):
-        pass
+        visibility = 40
+        chance = random.randint(0, 100)
+        if chance in visibility:
+            pass
+
 
     def reportBody(self):
         
