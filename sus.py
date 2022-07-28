@@ -1,11 +1,17 @@
+from itertools import count
 import random
 from match import Match
 from amogus import Amogus
 
 class Sus(Amogus):
+    counter = 0 #Counter for number of impostors
     
     def __init__(self, name, tasksToDo = None, colour = str):
         super().__init__(name, tasksToDo = None, colour = str)
+
+        Sus.counter += 1
+        self.id = Sus.counter
+
 
     def killTripulant(self):
         pass
