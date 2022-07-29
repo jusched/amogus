@@ -1,6 +1,6 @@
 from match import Match
 def run(player, sus, timer):
-    pass
+    Match.startMatch(sus = int, players = int)
 
 def player_assign():
     players = int(input("Insert how many players do you want. From 3 to 9: "))
@@ -15,8 +15,17 @@ def player_assign():
     timer = int(input("""Insert the amount of time the meetings will have:
     
     30 seconds, 60 seconds, 90 seconds or 120 seconds. \n"""))
-    
+    if timer != 30 or timer != 60 or timer != 90 or timer != 120:
+        print("Please select a valid time for the meeting")
+
+    counter = 1
+    player_list = []
+    while counter != (players + sus):
+        player_list = player_list.append(input(f"Ingresa el nombre del jugador {counter}."))
+        counter += 1
+
     run(players, sus, timer)
+
 
 
 if __name__ == "__main__":

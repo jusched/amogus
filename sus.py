@@ -1,3 +1,4 @@
+import time
 from itertools import count
 import random
 from match import Match
@@ -8,30 +9,36 @@ class Sus(Amogus):
     
     def __init__(self, name, tasksToDo = None, colour = str):
         super().__init__(name, tasksToDo = None, colour = str)
-
+        visibility = 40
         Sus.counter += 1
         self.id = Sus.counter
 
     def killTripulant(self):
         print(input("Enter the player you would like to kill, or if you want to cancel the action. "))
         while Amogus.counter != 0:
-            print(f"Kill player {Amogus.counter}\n")
+            print(f"Kill player {Amogus.counter}?\n")
             counter -= 1
 
-        decision = input()
+        decision = input() 
+        if type(decision) == int:
+            pass
+        if decision == "cancel":
+            return
 
     def sabotage(self):
-        visibility += 30
-        self.travelVent
-        self.killTripulant
+        visibility -= 30
+        countdown(t = 30)
+        def countdown(t):
+            print("The current sabotage is going to be active for 30 seconds.")
+            while t:
+                mins, secs = divmod(t, 60)
+                timer = '{:02d}:{:02d}'.format(mins, secs)
+                print(timer, end="\r")
+                time.sleep(1)
+                t -= 1
 
     def travelVent(self):
-        visibility = 40
-        chance = random.randint(0, 100)
-        if chance in visibility:
-            pass
+        visibility += 30
 
-
-    def reportBody(self):
-        
-        self.meeting()
+    def reportBody(self):        
+        Match.meeting()
