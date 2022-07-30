@@ -7,15 +7,18 @@ from tasks import Tasks
 class Amogus():
     counter = 0
 
-    def __init__(self, name, colour):
+    def __init__(self, name):
+        #After initializing the class, the players must have a name. 
+        # Also, the counter is to check if the criteria for win/lose is met.
+
         self.name = name
-        self.colour = colour    
         Amogus.counter += 1
         self.id = Amogus.counter
 
     def doTask(self):
+        #Does tasks for each player 
         task_del = input("Type the task you want to do.")
-        if task_del in Tasks.giveTask:
+        if task_del in Tasks.giveTask():
             countdown(t = 10)
         else:
             return
@@ -34,9 +37,12 @@ class Amogus():
 
 
     def vote(self):
-        vote_options = []
+        vote_options = list(Match.player_list)
+        for i in vote_options:
+            print(i)
+        print("Type the person you want to give your vote to, even yourself: ")
 
     def reportBody(self):
-        pass
+        self.callMeeting()
 
     #Random in order to calculate if another crewmate has seen the killing

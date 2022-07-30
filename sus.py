@@ -14,16 +14,18 @@ class Sus(Amogus):
         self.id = Sus.counter
 
     def killTripulant(self):
-        print(input("Enter the player you would like to kill, or if you want to cancel the action. "))
-        while Amogus.counter != 0:
-            print(f"Kill player {Amogus.counter}?\n")
-            counter -= 1
+        
+        input("Enter the player you would like to kill, or if you want to cancel the action. \n")
 
         decision = input() 
-        if type(decision) == int:
-            pass
-        if decision == "cancel":
+        for i in self.player_list:
+            print(i)
+        if decision in self.player_list:
+            del self.player_list[decision]           
+        elif decision == "cancel":
             return
+        else:
+            print("Enter a valid name or the 'cancel' word correctly. ")
 
     def sabotage(self):
         visibility -= 30
