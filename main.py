@@ -2,6 +2,8 @@ from match import Match
 def run(player, sus, timer):
     Match.startMatch(sus = int, players = int)
 
+
+
 def player_assign():
     #Implements rules for the creation of the player as well as impostors.
     # Also, makes a timer in order to do the meetings 
@@ -24,7 +26,7 @@ def player_assign():
     counter = 1
     player_list = []
     while counter != (players + sus):
-        player_list = player_list.append(input(f"Ingresa el nombre del jugador {counter}."))
+        player_list = player_list.append(input(f"Insert the name of the player {counter}."))
         counter += 1
 
     run(players, sus, timer, player_list)

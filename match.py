@@ -1,4 +1,3 @@
-from asyncio import tasks
 import time
 from tasks import Tasks
 from amogus import Amogus
@@ -34,10 +33,13 @@ class Match:
             return
     
     def meeting(self, players, sus, timer):
-        
         votes = 0
 
+
     def tasksCompleted(self):
+        #Counts the tasks based on the crewmates on the match and verifies 
+        # If there are enough tasks in order to finsh the match with victory by
+        # Tasks completed
         tasksWin += 1
         if tasksWin == Amogus.counter * 4:
             self.finishMatch(tasksCompleted=tasksWin)

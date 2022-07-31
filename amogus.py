@@ -1,8 +1,8 @@
-from itertools import count
 from match import Match
 import time
 import random
 from tasks import Tasks
+from sus import Sus
 
 class Amogus():
     counter = 0
@@ -30,6 +30,7 @@ class Amogus():
                 time.sleep(1)
                 t -= 1
                 print(f"Doing task, {t} seconds remaining")
+                return
             
 
     def callMeeting(self, players, sus, timer):
@@ -41,8 +42,15 @@ class Amogus():
         for i in vote_options:
             print(i)
         print("Type the person you want to give your vote to, even yourself: ")
-
+    
     def reportBody(self):
         self.callMeeting()
 
     #Random in order to calculate if another crewmate has seen the killing
+    def susSight(self):
+        chance = random.randint(0, 100)
+        if chance in Sus.visibility:
+            print("You have seen something suspicious.")
+        else:
+            print("Nothing here. ")
+        return
