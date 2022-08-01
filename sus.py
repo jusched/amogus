@@ -1,5 +1,3 @@
-import time
-import random
 from match import Match
 from amogus import Amogus
 
@@ -8,7 +6,7 @@ class Sus(Amogus):
     
     def __init__(self, name, tasksToDo = None, colour = str):
         super().__init__(name, tasksToDo = None, colour = str)
-        self.visibility = 40
+        self.visibility = 0
         Sus.counter += 1
         self.id = Sus.counter
 
@@ -20,50 +18,23 @@ class Sus(Amogus):
             print(i)
         if decision in self.player_list:
             del self.player_list[decision]
-            self.visibility += 40
-            countdown(t = 5)
-            def countdown(t):
-                print("You will be more visible for 5 seconds. ")
-                while t:
-                    mins, secs = divmod(t, 60)
-                    timer = '{:02d}:{:02d}'.format(mins, secs)
-                    print(timer, end="\r")
-                    time.sleep(1)
-                    t -= 1
-            return
+            self.visibility += 60
+            t = 10
+            Match.timer(self, t,text=(f"You will be more visible for {t} seconds. "))
             
         elif decision == "cancel":
             return
         else:
             print("Enter a valid name or the 'cancel' word correctly. ")
 
-        
-
     def sabotage(self):
         self.visibility -= 35
-        countdown(t = 30)
-        def countdown(t):
-            print("The current sabotage is going to be active for 30 seconds.")
-            while t:
-                mins, secs = divmod(t, 60)
-                timer = '{:02d}:{:02d}'.format(mins, secs)
-                print(timer, end="\r")
-                time.sleep(1)
-                t -= 1
-            return
-
-    def travelVent(self):
-        self.visibility += 30
-        countdown(t = 5)
-        def countdown(t):
-            print("You will be more visible for 5 seconds. ")
-            while t:
-                mins, secs = divmod(t, 60)
-                timer = '{:02d}:{:02d}'.format(mins, secs)
-                print(timer, end="\r")
-                time.sleep(1)
-                t -= 1
+        t = 30
+        Match.timer(self, t, text=(f"The sabotage will be active for {t} seconds. "))
         return
 
-    def reportBody(self):        
-        Match.meeting()
+    def travelVent(self):
+        self.visibility += 25
+        t = 5
+        Match.timer(self, t, text=(f"You will be more visible for {t} seconds. "))
+        return

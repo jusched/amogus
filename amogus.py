@@ -34,7 +34,7 @@ class Amogus():
             
 
     def callMeeting(self, players, sus, timer):
-        self.meeting(players, sus, timer)
+        Match.meeting(players, sus, meet_time=timer)
 
 
     def vote(self):
@@ -47,7 +47,7 @@ class Amogus():
         self.callMeeting()
 
     #Random in order to calculate if another crewmate has seen the killing
-    def susSight(self):
+    def __susSight(self):
         chance = random.randint(0, 100)
         if chance in Sus.visibility:
             print("You have seen something suspicious.")

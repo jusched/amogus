@@ -16,10 +16,10 @@ def player_assign():
     elif players == 7:
         sus = int(input("Insert how many sus do you want. From 1 to 3: "))
     
-    timer = int(input("""Insert the amount of time the meetings will have:
+    meet_time = int(input("""Insert the amount of time the meetings will have:
     
     30 seconds, 60 seconds, 90 seconds or 120 seconds. \n"""))
-    if timer != 30 or timer != 60 or timer != 90 or timer != 120:
+    if meet_time != 30 or meet_time != 60 or meet_time != 90 or meet_time != 120:
         print("Please select a valid time for the meeting")
 
     # Makes a list which each player
@@ -29,7 +29,7 @@ def player_assign():
         player_list = player_list.append(input(f"Insert the name of the player {counter}."))
         counter += 1
 
-    run(players, sus, timer, player_list)
+    run(players, sus, meet_time, player_list)
 
 
 

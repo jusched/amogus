@@ -4,12 +4,13 @@ from amogus import Amogus
 
 class Match:
 
-    def __init__(self, mapa, taskList, players, sus):
+    def __init__(self, mapa, taskList, players, sus, meet_time):
         self.mapa = mapa
         self.taskList = taskList
         self.players = players
         self.sus = sus
         self.tasksWin = Amogus.counter
+        self.meet_time = meet_time
 
 
     def startMatch(self, players, sus):  
@@ -17,8 +18,10 @@ class Match:
 
         if players + sus <= 10 and players <= 7 and sus >= 1:
             print(f"The game will start on the map {Tasks.giveMap} with {players} players and {sus} impostors")
+            return
         else:
             print(f"Select the correct amount of crewmates and impostors to start")
+            return
         #checks if the number of players is enough to start the match
 
 
@@ -32,9 +35,9 @@ class Match:
         else:
             return
     
-    def meeting(self, players, sus, timer):
-        votes = 0
-
+    def meeting(self, players, sus, meet_time):
+        self.timer(t=meet_time, text=(f"The meeting will be active for {meet_time} seconds. "))
+        votes = {}
 
     def tasksCompleted(self):
         #Counts the tasks based on the crewmates on the match and verifies 
@@ -45,3 +48,13 @@ class Match:
             self.finishMatch(tasksCompleted=tasksWin)
         else:
             return
+
+    def timer(self, t, text):
+        print(text)
+        while t:
+            mins, secs = divmod(t, 60)
+            timer = '{:02d}:{:02d}'.format(mins, secs)
+            print(timer, end="\r")
+            time.sleep(1)
+            t -= 1
+        return
