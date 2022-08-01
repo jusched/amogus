@@ -37,5 +37,4 @@ if __name__ == "__main__":
     #First, we assign the players
     player_assign()
 
-
-
+ # :c
