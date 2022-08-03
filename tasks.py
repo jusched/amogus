@@ -5,10 +5,10 @@ class Tasks:
     def __init__(self):
         #Has the maps and assigned task for each map in order to make the 
         #Assignation at the start of the game
-        self.map_option = {
-            "Skeld":["Card swipe", "Reactor", "Navigation",
+        self.map_options = {
+            "Skeld":("Card swipe", "Reactor", "Navigation",
             "Cables", "02 filter", "Clean Vent", "Electric"
-            ],
+            ),
             "Mira HQ":("ID Code", "Power", "Fuel", "Shields",
             "Process data", "Diagnostics", "Scan"
             ),
@@ -28,13 +28,13 @@ class Tasks:
 
     def giveTask(self, task_list):
          
-        counter = 1
-        while counter != 4:
+        max_tasks = 1
+        while max_tasks <= 4:
             tasksToDo = tasksToDo.append(random.choice(task_list))
-            counter += 1
-            if tasksToDo[counter] in tasksToDo:
-                tasksToDo.pop(counter)
-                counter -= 1
+            max_tasks += 1
+            if tasksToDo[max_tasks] in tasksToDo:
+                tasksToDo.pop(max_tasks)
+                max_tasks -= 1
         #Assigns tasks from task_list until 4 are choosen. 
         #If a task is going to be repeated, it repeats the process
         # in order to avoid the same task twice on the same player. 

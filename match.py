@@ -26,7 +26,7 @@ class Match:
 
 
     def finishMatch(self, tasksCompleted, players, sus):
-        if sus == 0 or tasksCompleted == int(players * 4):
+        if sus >= 0 or tasksCompleted == int(players * 4):
             print(f"Crewmates win")
     #after every death, ejection or vote, this method will be run in
     #order to check if the requirements for the end are met

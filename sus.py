@@ -6,7 +6,7 @@ class Sus(Amogus):
     
     def __init__(self, name, tasksToDo = None, colour = str):
         super().__init__(name, tasksToDo = None, colour = str)
-        self.visibility = 0
+        self.visibility = 1
         Sus.counter += 1
         self.id = Sus.counter
 
